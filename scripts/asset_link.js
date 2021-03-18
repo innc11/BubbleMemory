@@ -10,11 +10,28 @@ function getPosition(str, m, i) {
 
 hexo.extend.filter.register('after_post_render', function(data) {
     var config = hexo.config;
-    if(config.post_asset_folder && data.layout == 'post'){
+    var theme = hexo.theme.config
+
+    let enabled = true
+    enabled &= config.post_asset_folder
+    enabled &= data.layout in theme.relative_asset_link_layouts
+    enabled &= theme.relative_asset_link_layouts[data.layout]
+
+    if(enabled) {
         var link = data.permalink;
         link = link.substr(getPosition(link, '/', 3) + 1)
         link = link.replace(/\.html$/, '')
         link += '/';
+
+        // 处理bg字段(in Front-Matter)
+        if(typeof data.bg == 'string' && data.bg != '')
+        {
+            if(!data.bg.startsWith('http'))
+            {
+                data.bg = config.root + link + data.bg
+                console.info("update bg link for: "+data.title);
+            }
+        }
 
         var toprocess = ['excerpt', 'more', 'content'];
         for(var i = 0; i < toprocess.length; i++){

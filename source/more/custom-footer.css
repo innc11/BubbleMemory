@@ -38,7 +38,13 @@
     border-radius: 0.5rem;
     transition: all 0.5s;
 }
+.copyright a {
+    color: #d8d7be !important;
+}
 .footer .nav .nav-item .nav-link, .footer .footer-link {
     color: #d8d7be !important;
 }
 
+#SiteRunningTime {
+    display: inline;
+}

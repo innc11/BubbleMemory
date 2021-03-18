@@ -2,8 +2,6 @@
 	bgimg?: string // 使用指定的背景URL
 %> 
 
-<!-- 随机背景 -->
-
 <div class="section-shaped">
 <div class="shape shape-style-1 random-bg ">
     <% if (theme.bubble_show) { %>
@@ -54,6 +52,7 @@
             }
         }
 
+        <%# 对相对路径的处理逻辑写在asset_link.js中了 %>
         RandomBG('<%- (typeof bgimg!='undefined' && bgimg != '')?bgimg:'' %>');
     })
 </script>

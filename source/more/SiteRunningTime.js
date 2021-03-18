@@ -6,6 +6,9 @@ function SiteRunningTime()
 
 	var node = document.querySelector(idSelector)
 	// node.className = "SiteRunningTime";
+	
+	if(node == null)
+		return
 
 	var startTime = node.getAttribute("start-time")
 	var autoRefresh = node.getAttribute("auto-refresh")

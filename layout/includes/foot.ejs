@@ -5,6 +5,13 @@
 				<div class="col-md-12">
 					<div class="copyright">
                         <%- theme.footer_text %>
+						<br>
+						<div>
+							<% if(theme.site_running_time.enabled) { %>
+							<div id="SiteRunningTime" start-time="<%- theme.site_running_time.since %> " format="<%- theme.site_running_time.format %> " auto-refresh="<%- theme.site_running_time.refresh %> ">
+								<style onload="$(function(){SiteRunningTime();})"></style>
+							</div> | <% } %>Theme <a href="https://github.com/innc11/BubbleMemory" class="footer-link">BubbleMemory</a> modified from <a href="https://github.com/trinitrotofu/Bubble" class="footer-link">Bubble</a>
+						</div>
 					</div>
 				</div>
 			</div>
