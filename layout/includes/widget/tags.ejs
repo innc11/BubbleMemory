@@ -1,0 +1,14 @@
+<%# 参数表
+	showicon: bool // 显示小图标
+%> 
+
+<span class="list-tag">
+    <% if (showicon && article.tags.length>0) { %>
+        <i class="fa fa-tags" aria-hidden="true"></i>
+    <% } %>
+
+    <% article.tags.each(function(tag) { %>
+        <% let t = tag.name.indexOf(',')>0? tag.name.split(',').join('/'):tag.name %>
+        <a href="<%- tag.permalink %>" class="badge badge-success badge-pill"><%- t %></a>
+    <% }) %>
+</span>

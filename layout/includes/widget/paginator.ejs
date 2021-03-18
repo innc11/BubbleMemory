@@ -1,0 +1,16 @@
+<section class="section" style="padding-bottom: 1rem; padding-top: 6rem">
+	<div class="container">
+		<nav class="page-nav">
+			<% let prev_text = `<i class="fa fa-angle-left" aria-hidden="true"></i>` %>
+			<% let next_text = `<i class="fa fa-angle-right" aria-hidden="true"></i>` %>
+		
+			<ul class="pagination justify-content-center">
+				<%- paginator2({
+					prev_text: prev_text,
+					next_text: next_text,
+					escape: false
+				}) %>
+			</ul>
+		</nav>
+	</div>
+</section>

@@ -1,0 +1,228 @@
+/* 2.4 For Bubble 4.0.1 */
+
+@media(prefers-color-scheme: dark) {
+
+    /* 主container */
+    .content-card {
+        background-color: #272727;
+        box-shadow: 2px 3px 10px #00000069 !important;
+    }
+
+    /* 顶栏 */
+    .headroom--not-top {
+        background-color: #232323b3 !important;
+    }
+
+    .headroom--not-top .navbar-brand, .navbar-brand, /* 顶栏-标题 */
+    .headroom--not-top .nav-link,     .nav-link { /* 顶栏-Page文字 */
+        color: #ffffff !important;
+    }
+    
+    /* 首页每篇文章的标题 */
+    .content-article-preview .content h2 a.text-default {
+        transition: all 0.2s;
+        color: #43c3bb !important;
+    }
+    /* 悬停和聚焦 */
+    .content-article-preview .content h2 a.text-default:hover, 
+    .content-article-preview .content h2 a.text-default:focus {
+        color: #3a9a94 !important;
+    } 
+
+    /* 文章预览框 */
+    .article-summary-container-with-bg {
+        background-color: #000000ad;
+    }
+    .article-summary-container-without-bg {
+        background-color: #353535e6;
+        overflow: hidden;
+    }
+
+    /* 翻页导航 */
+    .page-nav a { /* 未激活 */
+        background-color: #3a3939;
+        border-color: #3a3939;
+    }
+    .page-nav .active a{ /* 激活 */
+        border-color: #b96a79;
+        background-color: #b96a79;
+    }
+    .page-nav a:hover{ /* 悬停 */
+        background-color: #265830;
+        border-color: #265830;
+    }
+
+    /* 图片 */
+    .content img {
+        /* border-color: #ffffff !important; */
+        box-shadow: 0px 0px 3px #3a3a3a;
+    }
+
+    /* 评论框框 */
+    #textarea {
+        background-color: #353535;
+    }
+
+    /* 移动端导航栏 */
+    .navbar-collapse.collapsing, .navbar-collapse.show {
+        background-color: #252525;
+    }
+    /* 移动端导航栏-关闭按钮 */
+    .navbar-collapse .navbar-toggler span {
+        background-color: #ffffff !important;
+    }
+    .navbar-nav .nav-link, /* 移动端导航栏-Page按钮 */
+    .collapse-brand a h5 {  /* 移动端导航栏-站点标题 */
+        color: #cecece !important;
+    }
+    /* 移动端导航栏-搜索框 */
+    #search:hover .form-control, 
+    #search:hover .input-group-text {
+        background-color: #1b1b1b !important;
+    }
+    /* 移动端导航栏-站点标题下方分隔线 */
+    .navbar-collapse-header {
+        border-bottom: 1px solid #9696964f !important;
+    }
+    /* 移动端导航栏-菜单按钮(三条线) */
+    .headroom--not-top .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(255,255,255,0.95)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E')!important;
+    }
+
+    /* 友链站点描述 */
+    .friend-text {
+        color: #b9b9b9;
+    }
+    bblink .friend-text h5 {
+        color: #bdbdbd !important;
+    }
+
+    /* to top按钮 */
+    .scrollup-btn {
+        background: transparent;
+        box-shadow: unset;
+        border-width: 0px;
+        color: #d4d4d4;
+        transition-timeing-function: ease-out;
+    }
+    .scrollup-btn:hover,
+    .scrollup-btn:focus {
+        background: transparent !important;
+        box-shadow: unset;
+        color: #b78190 !important;
+    }
+    .scrollup-btn:active {
+        transform: translateY(20px);
+        color: #ef9696 !important;
+    }
+
+    a {
+        color: #5ccaac;
+    }
+
+    p, li {
+        color: #c1c1c1;
+    }
+
+    /* 代码框外框 */
+    pre.line-numbers {
+        color: #c1c1c1 !important;
+        border-color: #464646;
+    }
+
+
+    /* 文章里的h123456 */
+    .content-card-head:not(.content-article) h1, 
+    .content-card-head:not(.content-article) h2, 
+    .content-card-head:not(.content-article) h3, 
+    .content-card-head:not(.content-article) h4, 
+    .content-card-head:not(.content-article) h5, 
+    .content-card-head:not(.content-article) h6 {
+        color: #ce717e;
+    }
+
+    /* 首页文章预览里的h123456 */
+    .the-article-summary h1, 
+    .the-article-summary h2, 
+    .the-article-summary h3, 
+    .the-article-summary h4, 
+    .the-article-summary h5, 
+    .the-article-summary h6 {
+        color: #b5b5b5;
+        font-weight: bold;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #cccccc;
+    }
+
+    /* 评论人名字(有链接的那种) */
+    .comment-head h6 a {
+        color: #8ccaff !important;
+    }
+    /* 评论回复按钮 */
+    .comment-head .comment-reply-button a {
+        font-size: 1rem;
+        color: #2c6303 !important;
+    }
+    /* 评论时间 */
+    .comment-head h6 small {
+        color: #cccccc8c !important;
+    }
+
+    /* 底部版权文字 */
+    .copyright{
+        color: #c5c5c5;
+    }
+
+    /* 底部版权文字里的超链接 */
+/*     .footer .copyright .footer-link{
+        color: #a9d8ff !important;
+    } */
+    
+    /* footer的最新评论/文章/归档文字的颜色和底部右侧导航栏的文字颜色 */
+    .footer .nav .nav-item .nav-link{
+        color: #c5c5c5 !important;
+    }
+
+    /* 评论区-"作者"小标签 */
+    #comments .badge-primary {
+        color: #b58121 !important;
+        background-color: #4f535d80;
+    }
+
+    /* 首页-文章小标签-分类 */
+    .badge-info {
+        background-color: #4f535d80;
+    }
+
+    /* 首页-文章小标签-标签 */
+    .list-tag .badge-success {
+        background-color: #4f535d80;
+    }
+
+    /* 首页-文章小标签-作者 */
+    .badge-warning {
+        background-color: #4f535d80;
+        color: #d28535;
+    }
+
+    /* 目录 */
+    #toc-nomiao {
+        color: #fff;
+    }
+    .bg-secondary.toc-container {
+        background-color: #252525 !important;
+        border: 1px solid #505050 !important;
+    }
+    .toc-container strong {
+        color: #d6d6d6;
+    }
+    .toc-container .toc-list .located {
+        color: #91fbd9 !important;
+    }
+    .toc a {
+        color: #d6d6d6;
+    }
+
+}

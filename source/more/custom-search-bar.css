@@ -1,0 +1,23 @@
+/* 1.0.1 */
+
+/* 搜索栏透明 */
+#search .form-control {
+    background-color: #ffffff3d !important;
+    margin-left: 1px;
+}
+#search .input-group-text {
+    background-color: #ffffff3d !important;
+}
+#search:hover .input-group-text {
+    background-color: #ffffff !important;
+}
+#search:hover .form-control {
+    background-color: #ffffff !important;
+}
+
+/* 移动端时字体变大方便点击 */
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        font-size: 1.2rem;
+    }
+}

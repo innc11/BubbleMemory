@@ -1,0 +1,68 @@
+<%# 参数表
+	article: object // 文章对象(其实就是page对象)
+	page: bool // 是否是独立页面，或者是普通文章
+%> 
+
+<%- partial('includes/head', {title: article.title}) %>
+
+<main>
+	<%- partial('includes/catalog') %>
+	<%- partial('includes/widget/background', {bgimg: page.bg}) %>
+	<section class="section section-lg section-hero section-shaped">
+		<div class="container shape-container d-flex align-items-center py-lg">
+			<div class="col px-0 text-center">
+				<div class="row align-items-center justify-content-center">
+					<h1 class="text-white"><%- article.title %></h1>
+				</div>
+				<div class="row align-items-center justify-content-center">
+					<% if (!page) { %>
+						<h5 class="text-white">于 <time datetime="<%- date(article.date, config.date_format) %>"><%- date(article.date, config.date_format) %></time> 由 <%- config.author %> 发布</h5>
+					<% } else { %>
+						<h5 class="text-white">更新于 <time datetime="<%- date(article.updated, config.date_format) %>"><%- date(article.updated, config.date_format) %></time></h5>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section section-components bg-secondary content-card-container">
+		<div class="container container-lg py-5 align-items-center content-card-container">
+			<div class="card shadow content-card content-card-head content-article">
+				<!-- Article content -->
+				<section class="section">
+					<div class="container">
+						<div class="content">
+							<%- article.content %>
+							
+							<% let hasTags = article.tags!=null && article.tags.length > 0 %>
+							<% let hasCategories = article.categories!=null && article.categories.length > 0 %>
+
+                            <% if (hasTags || hasCategories) { %>
+								<hr><ul>
+							<% } %>
+								
+								<% if (hasCategories) { %>
+									<li>分类：<%- partial('includes/widget/categories', {showicon: false}) %></li>
+								<% } %>
+
+								<% if (hasTags) { %>
+									<li>标签：<%- partial('includes/widget/tags', {showicon: false}) %></li>
+								<% } %>
+
+							<% if (hasTags || hasCategories) { %>
+								</ul>
+							<% } %>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="card shadow content-card" style="padding: 3rem 0rem;">
+				<div class="container">
+					<%- partial('includes/widget/comment') %>
+				</div>
+			</div>
+			
+		</div>
+    </section>
+</main>
+
+<%- partial('includes/foot') %>

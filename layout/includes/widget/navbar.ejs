@@ -1,0 +1,57 @@
+<a class="navbar-brand" href="<%- config.url %>"><%- config.title %></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbar-default">
+	<div class="navbar-collapse-header">
+		<div class="row">
+			<div class="col-6 collapse-brand">
+				<a href="<%- config.url %>"><h5><%- config.title %></h5></a>
+			</div>
+			<div class="col-6 collapse-close">
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation Bar -->
+	<ul class="navbar-nav ml-lg-auto align-items-lg-center">
+		<li class="nav-item">
+			<a class="nav-link" href="<%- config.url %>">首页</a>
+		</li>
+
+		<%# 自动显示所有独立页面 %> 
+		<% if (theme.display_pages) { %>
+			<% site.pages.each(function(page) { %>
+				<% if (page.hiden) return %>
+				<li class="nav-item">
+					<a class="nav-link" href="<%- page.permalink %>" title="<%- page.title %>"><%- page.title %></a>
+				</li>
+			<% }) %>
+		<% } %>
+
+		<%# 手动显示独立页面 %> 
+		<% for(let p of theme.pages) { %>
+			<li class="nav-item">
+				<a class="nav-link" href="<%- p[1] %>"><%- p[0] %></a>
+			</li>
+		<% } %>
+		
+		<%# 搜索栏 %> 
+		<% if (false) { %>
+			<li class="navbar_search_container">
+				<form method="post" action="" id="search">
+					<div class="input-group input-group-alternative">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-search"></i></span>
+						</div>
+						<input type="text" name="s" class="form-control" placeholder="搜点什么……" type="text" autocomplete="off">
+					</div>
+				</form>
+			</li>
+		<% } %>
+	</ul>
+</div>

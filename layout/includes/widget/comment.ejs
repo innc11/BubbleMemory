@@ -1,0 +1,34 @@
+<div id="ac-comment-widget"></div>
+
+<script>
+    $(function() {
+        console.log('AwesomeComment v'+AwesomeComment.version()+' ('+(AwesomeComment.isProduction()?'prod':'dev')+')')
+        if(typeof(ac)=='undefined')
+        {
+            ac = new AwesomeComment({
+                elementId: 'ac-comment-widget',
+                // pageLabel: '<%- article.title %>', // 与Pjax兼容性不好
+                api: 'https://server.innc11.cn:6675',
+                captchaRequired: false,
+                language: {
+                    editorPlaceholder: '还有什么要补充的吗?\n留下邮箱可以收到回复提醒\n支持Markdown语法\n',
+                    nickPlaceholder: '昵称',
+                    mailPlaceholder: '邮箱（可选，会被保密）',
+                    websitePlaceholder: '网站（可选）',
+                }
+            })
+            ac.create({
+                key: location.pathname,
+                pageLabel: document.querySelector('title').innerText
+            })
+            console.log('create')
+        }else{
+            console.log('recreate')
+            ac.destroy()
+            ac.create({
+                key: location.pathname,
+                pageLabel: document.querySelector('title').innerText
+            })
+        }
+    })
+</script>

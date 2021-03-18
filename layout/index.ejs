@@ -1,0 +1,57 @@
+<%- partial('includes/head') %>
+
+<main>
+    <%- partial('includes/widget/background', {bgimg: theme.index_backround}) %>
+
+    <div class="container shape-container d-flex align-items-center py-lg section-hero">
+        <div class="col px-0">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="index-avatar-container">
+                        <% let avatar_url = theme.avatar_url || 'images/avatar.png' %>
+                        <% let url = avatar_url.startsWith('http')? avatar_url: url_for(avatar_url) %>
+                        <img src="<%- url %>" class="index-avatar">
+                    </div>
+                    <h1 class="text-white"><%- config.title %></h1>
+                    <hr/>
+                    <p class="lead text-white"><%- config.subtitle %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section section-components bg-secondary content-card-container">
+
+        
+        <div class="container container-lg py-5 align-items-center content-card-container">
+
+            <!-- 页眉分页器在首页不显示-->
+            <% if (theme.double_paginator_for_index && page.total > 1 && page.current > 1){ %>
+                <%- partial('includes/widget/paginator') %>
+            <% } %>
+
+            <!-- Article Previews -->
+            <% page.posts.each(function(post, index) { %>
+                <% if (! (/^_.*/.test(post.source.split('/')[1]))) { %>
+                    <%- partial('includes/article_summary', {is_first: index==0, article: post, bgimg: post.bg}) %>
+                <% } %>
+            <% }) %>
+            
+            <!-- 页脚分页器 -->
+            <% if (page.total > 1){ %>
+                <%- partial('includes/widget/paginator') %>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- 翻页时自动滚动 -->
+    <% if (page.current	>1)  { %>
+        <script>
+            $('html,body').animate({ 
+                scrollTop: $('.container.container-lg.py-5.align-items-center.content-card-container>*').offset().top
+            }, 300)
+        </script>
+    <% } %>
+</main>
+
+<%- partial('includes/foot') %>

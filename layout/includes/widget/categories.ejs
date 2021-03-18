@@ -1,0 +1,13 @@
+<%# 参数表
+	showicon: bool // 显示小图标
+%> 
+
+<span class="list-tag">
+    <% if (showicon && article.categories.length>0) { %>
+        <i class="fa fa-folder-o" aria-hidden="true"></i>
+    <% } %>
+    
+    <% article.categories.each(function(cate) { %>
+        <a href="<%- cate.permalink %>" class="badge badge-info badge-pill"><%- cate.name %></a>
+    <% }) %>
+</span>

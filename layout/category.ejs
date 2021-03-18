@@ -1,0 +1,62 @@
+<%- partial('includes/head', {title: '分类 之 '+page.category}) %>
+
+<!-- Categoty Archives -->
+<main>
+    <section class="section section-lg section-hero section-shaped">
+        <!-- Background -->
+        <%- partial('includes/widget/background') %>
+        <div class="container shape-container d-flex align-items-center py-lg">
+            <div class="col px-0 text-center">
+                <div class="row align-items-center justify-content-center">
+                    <h1 class="text-white">分类 之 <%- page.category %></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-components bg-secondary content-card-container">
+        <div class="container container-lg py-5 align-items-center content-card-container">
+            <div class="card shadow content-card content-card-head content-article">
+                <!-- Page content -->
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            
+                                <article class="post post-archives">
+                                    <h2 class="title">分类 之 <%- page.category %></h2>
+                                    <div class="entry-content">
+                                        <% let year=0; let mon=0; let i=0; let j=0; let output=''; %>
+                                        <% page.posts.each(function(post) { %>
+                                            <% let year_tmp = date(post.date, 'YYYY') %>
+                                            <% let mon_tmp =  date(post.date, 'M') %>
+                                            <% let y=year; let m=mon; %>
+                                            <% if (mon != mon_tmp && mon > 0) output += '</ul>' %>
+                                            <% if (year != year_tmp && year > 0) output += '</ul>' %>
+                                            <% if (year != year_tmp) year = year_tmp %>
+                                            <% if (mon != mon_tmp || (mon == mon_tmp && y != year_tmp)) { %>
+                                                <% mon = mon_tmp %>
+                                                <% output += '<h5 style="margin-top: 0.4rem;margin-bottom: 0;">' + year_tmp + ' 年' + mon_tmp + ' 月</h5>' %>
+                                                <% output += '<ul>' %>
+                                            <% } %>
+                                            <% let ch_time = date(post.date, 'Y年m月d日') %>
+                                            <% output += '<li><a href="'+post.permalink+'">'+post.title+'</a>&nbsp;&nbsp;&nbsp;&nbsp;<span title="'+ch_time+'">('+date(post.date, 'MMM D, YYYY')+')</span></li>' %>
+                                        <% }) %>
+                                        <%- output %>
+                                    </div>
+                                </article>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Comment -->
+            <!-- todo 评论 -->
+            <!-- <!php if (!$this->hidden && $this->allow('comment')): !>
+            <div class="card shadow content-card">
+                <!php $this->need('comments.php'); !>
+            </div>
+            <!php endif; !> -->
+        </div>
+    </section>
+</main>
+
+<%- partial('includes/foot') %>

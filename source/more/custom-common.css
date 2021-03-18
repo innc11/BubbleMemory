@@ -1,0 +1,206 @@
+/* 2.10 For Bubble 4.0.2 */
+
+/* 卡片 *************************** */
+
+/* 所有卡片(.card)的圆角效果 */
+.card {
+    border-radius: 0.6rem;
+}
+
+/* 取消首个卡片上移的效果 */
+.content-card-head {
+    margin-top: -5rem;
+}
+
+.content-card {
+    margin-top: 4rem;
+}
+
+/* 调整宽度 *********** */
+
+/* 调整文章卡片的宽度 */
+@media (max-width: 992px) {
+    .container {
+        width: 100% !important;
+    }
+
+    /* 卡片容器 */
+    .content-card-container {
+        max-width: 100% !important;
+        padding: 0;
+        margin: 0;
+        padding-top: 0 !important;
+    }
+    /* 容器里的卡片 */
+    .content-card {
+        margin: 0;
+        border-radius: 0;
+        border-width: 0;
+        box-shadow: none !important;
+    }
+    .container .content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* 文章内的文章标题 */
+.text-center .text-white h1 {
+    font-size: 2rem;
+    text-shadow: 2px 3px 2px #000;
+}
+
+/* 全页平滑滚动 */
+/* :root{
+    scroll-behavior: smooth;
+} */
+
+/* 代码框 */
+pre.line-numbers {
+    border: 2px solid #a0a0a09e;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* 评论区-"作者"小标签 */
+#comments .badge-primary {
+    color: #4bb18e;
+    background-color: #e4e2e2;
+}
+
+/* 所有小标签的字体 */
+.badge-pill {
+    font-family: "Microsoft YaHei", tahoma, Helvetica, "Hiragino Sans GB", SimSun !important;
+}
+
+/* 首页-文章小标签-分类 */
+.list-tag .badge-info {
+    background-color: #c7f7ff;
+    margin-right: 0px;
+}
+
+/* 首页-文章小标签-标签 */
+.list-tag .badge-success {
+    background-color: #aefddb;
+    margin-right: 0px;
+}
+
+/* 首页-文章小标签-作者 */
+.badge-warning {
+    background-color: #ffded7;
+}
+
+
+/* to top按钮 */
+.scrollup-btn {
+    background: transparent;
+    box-shadow: unset;
+    border-width: 0px;
+    color: #efefef;
+    transition-timeing-function: ease-out;
+}
+.scrollup-btn:hover,
+.scrollup-btn:focus {
+    background: transparent !important;
+    box-shadow: unset;
+}
+.scrollup-btn:active {
+    transform: translateY(20px);
+}
+.scrollup-btn i {
+    text-shadow: 2px 2px 2px #9a9a9af7;
+}
+
+/* 目录侧栏 */
+.bg-secondary.toc-container {
+    background: #e6e6e6 !important;
+    /* border: 1px solid #505050 !important; */
+}
+
+/* B站视频 */
+.bilibili-wrapper {
+    height: 0;
+    width: 90%;
+    padding-bottom: calc(50.5% + 60px);
+    margin: 0 auto;
+    transform: translate(0px, 0px);
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+}
+.bilibili-wrapper iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 在预览框里时 */
+.content-article-preview .bilibili-wrapper {
+    width: 50%;
+    padding-bottom: calc(28.125%);
+}
+@media (max-width: 768px) {
+    .content-article-preview .bilibili-wrapper {
+        width: 80%;
+        padding-bottom: calc(45%);
+    }
+}
+
+/* 搜索栏边短 */
+form#search {
+    width: 140px;
+}
+/* 搜索栏边窄 */
+form#search .input-group-prepend,
+form#search input {
+    height: 2rem;
+}
+
+/* 顶部导航栏里的按钮 */
+.nav-item .nav-link {
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px #0000002b;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 1rem;
+}
+.nav-item .nav-link:hover {
+    background-color: #00000040;
+}
+
+/* 全局背景 */
+.random-bg.shape {
+    position: fixed;
+}
+
+/* 全局背景遮罩 */
+.bg-secondary {
+    background-color: #0000004f !important;
+    box-shadow: 1px 1px 80px 80px #0000004f;
+}
+/* 页脚也要覆盖 */
+footer.footer {
+    background-color: #0000006e !important;
+}
+
+/* 页面标题和描述 */
+.section-hero {
+    height: 60vh;
+    min-height: 500px;
+}
+
+/* 避免表格太宽然后溢出 */
+tbody {
+    word-break: break-word;
+}
+
+/* 避免图片太高 */
+.container .content img {
+    max-height: 300px;
+}

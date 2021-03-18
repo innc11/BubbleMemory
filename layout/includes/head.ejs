@@ -1,0 +1,105 @@
+<%# 参数表
+	title?: string // 页面标题，不包括站名的部分
+%> 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Typecho 极简风格响应式主题 Bubble version 4.0.1 -->
+	<!-- Authors TriNitroTofu, Rorical, Boshi -->
+	<!-- https://github.com/trinitrotofu/Bubble -->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title><%- (typeof(title)!='undefined'?(title+' - '):'') + config.title %></title>
+
+	<!-- Favicon -->
+	<% 
+		let logo_url = theme.logo_url || 'images/logo.png'
+		let url = logo_url.startsWith('http')? logo_url:url_for(logo_url)
+	%>
+	<link href="<%- url %>" rel="icon" type="image/png">
+
+	<!-- Fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
+
+	<!-- FontAwesome -->
+	<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Main CSS -->
+	<link type="text/css" href="<%- url_for('css/main.min.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-comment.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-common.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-font.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-footer.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-friend.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-headers.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-index.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-search-bar.css') %>" rel="stylesheet">
+	<link type="text/css" href="<%- url_for('more/custom-summary.css') %>" rel="stylesheet">
+	<!-- <link type="text/css" href="<%- url_for('more/dark.css') %>" rel="stylesheet"> -->
+
+	<!-- KaTeX CSS -->
+	<% if (theme.katex) { %>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+	<% } %>
+
+	<!-- PrismJS CSS -->
+	<% if (theme.prismjs) { %>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/<%- theme.prism_theme %>.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.css" />
+        <% if (theme.prism_line_numbers) { %>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.css" />
+        <% } %>
+    <% } %>
+
+	<!-- Viewer CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.min.css" />
+	
+	<!-- Jquery -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+	<!-- Viewer.js Plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fengyuanchen/jquery-viewer@master/dist/jquery-viewer.min.js"></script>
+
+	<!-- MD5 Js -->
+	<script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5/js/md5.min.js"></script>
+
+	<!-- LazyLoad Js -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dkern/jquery.lazy/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dkern/jquery.lazy/jquery.lazy.plugins.min.js"></script>
+
+	<!-- <script src="http://127.0.0.1:9981/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://127.0.0.1:9981/index.css" /> -->
+
+	<script src="https://cdn.jsdelivr.net/gh/innc11/awesome-comment-files@v1.4.5/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/innc11/awesome-comment-files@v1.4.5/index.css" />
+
+	<% if (theme.typecho_headers) { %>
+		<!-- Typecho header -->
+		<meta name="description" content="<%- config.subtitle %> ">
+		<meta name="keywords" content="<%- config.keywords.join(', ') %>">
+		<meta name="generator" content="Typecho 1.2/18.1.29">
+		<meta name="template" content="Bubble">
+    <% } %>
+
+	<!-- More header -->
+	<% if (theme.pjax) { %>
+        <meta name="commentReply" content="0">
+        <meta name="antiSpam" content="0">
+    <% } else { %>
+        <meta name="commentReply" content="0">
+    <% } %>
+</head>
+<body>
+	<header class="header-global">
+		<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+			<div class="container">
+				<%- partial('includes/widget/navbar') %>
+			</div>
+		</nav>
+    </header>
+    
+    <%- theme.pjax? '<div id="pjax-container">':'' %>

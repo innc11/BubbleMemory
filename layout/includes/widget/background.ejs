@@ -1,0 +1,59 @@
+<%# 参数表
+	bgimg?: string // 使用指定的背景URL
+%> 
+
+<!-- 随机背景 -->
+
+<div class="section-shaped">
+<div class="shape shape-style-1 random-bg ">
+    <% if (theme.bubble_show) { %>
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+    <% } %>
+</div>
+</div>
+
+<script>
+    $(function(){
+        let backgrounds = [
+            <%- theme.random_backrounds.map((e) => '"'+e+'"').join(',\n') %>
+        ]
+        function Range(min, max) { 
+            return Math.floor(Math.random()*(max-min+1)+min) 
+        }
+        function RandomBG(bgurl) {
+            let el = $('.random-bg')
+
+            let index = 0
+
+            if(false) {
+                let time = new Date();
+                let progress = time.getMinutes() / 60
+                index = parseInt(progress * backgrounds.length)
+
+                console.log('背景切换：'+index+' / '+backgrounds.length+ ' ('+(parseInt(progress*10000)/ 100.0)+'%)')
+            } else {
+                index = Range(0, backgrounds.length-1)
+            }
+            
+            let bg = bgurl || backgrounds[index]
+            if (backgrounds.length == 0) {
+                <%# 使用默认渐变背景 %>
+                el.addClass('shape-primary')
+            } else {
+                el.addClass('shape-image')
+                el.css('background-image', 'url("' + bg + '")')
+            }
+        }
+
+        RandomBG('<%- (typeof bgimg!='undefined' && bgimg != '')?bgimg:'' %>');
+    })
+</script>

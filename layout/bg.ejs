@@ -1,0 +1,100 @@
+<%# 页面模板: bg，专门用来展示背景图片，在Front-Matter里面写上layout: bg以使用 %> 
+<%- article = page %>
+<%- partial('includes/head', {title: article.title}) %>
+
+<main>
+	<%- partial('includes/catalog') %>
+	<%- partial('includes/widget/background') %>
+	<section class="section section-lg section-hero section-shaped">
+		<div class="container shape-container d-flex align-items-center py-lg">
+			<div class="col px-0 text-center">
+				<div class="row align-items-center justify-content-center">
+					<h1 class="text-white"><%- article.title %></h1>
+				</div>
+				<div class="row align-items-center justify-content-center">
+					<% if (!page) { %>
+						<h5 class="text-white">于 <time datetime="<%- date(article.date, config.date_format) %>"><%- date(article.date, config.date_format) %></time> 由 <%- config.author %> 发布</h5>
+					<% } else { %>
+						<h5 class="text-white">更新于 <time datetime="<%- date(article.updated, config.date_format) %>"><%- date(article.updated, config.date_format) %></time></h5>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section section-components bg-secondary content-card-container">
+		<div class="container container-lg py-5 align-items-center content-card-container">
+			<div class="card shadow content-card content-card-head content-article">
+				<!-- Article content -->
+				<section class="section">
+					<div class="container">
+						<div class="content">
+							<%- article.content %>
+								
+							<% for (let url of theme.random_backrounds) { %>
+								<p>
+									<img style="max-width: 50%; opacity:0.4;" class="lazy-loading" src="<%- url_for('images/loading.gif') %>" source-url="<%- url %>" title="<%- url.split('/').reverse()[0] %>" onclick="onClickPicture(this)">
+								</p>
+							<% } %>
+
+							<script>
+								$(function() {
+									// 懒加载 https://blog.csdn.net/dxj124/article/details/87695070
+									function onScroll(event) {
+										$(".lazy-loading").each(function(){
+											var scrollTop = $(window).scrollTop(); //即页面向上滚动的距离
+											var windowHeight = document.body.clientHeight //$(window).height(); // 浏览器自身的高度
+											var offsetTop = $(this).offset().top; //目标标签img相对于document顶部的位置
+
+											// console.log('scrollTop: '+scrollTop+' / '+windowHeight)
+									
+											if(offsetTop < (scrollTop + windowHeight) && offsetTop > scrollTop){
+												let sourceUrl = $(this).attr('source-url')
+												if (sourceUrl) {
+													setTimeout(() => {
+														$(this).attr('src', sourceUrl)
+														$(this).on('load', ()=>{
+															$(this).animate({ maxWidth: "100%", opacity: 1 }, 200)	
+														})
+													}, 20)
+													
+													$(this).removeClass('lazy-loading')
+												}
+											}
+										})
+									}
+									
+									$(window).bind("scroll", onScroll)
+
+									setTimeout(() => {
+										onScroll()
+									},100)
+								})
+							</script>
+
+							<style type="text/css">
+								@media (min-width: 1300px) {
+									.container {
+										max-width: 1250px !important;
+									}
+								}
+
+								.container .content img {
+									max-height: unset;
+								}
+							</style>
+							
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="card shadow content-card" style="padding: 3rem 0rem;">
+				<div class="container">
+					<%- partial('includes/widget/comment') %>
+				</div>
+			</div>
+			
+		</div>
+    </section>
+</main>
+
+<%- partial('includes/foot') %>
