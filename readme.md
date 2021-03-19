@@ -335,7 +335,7 @@ Valine因为各种机制不完善，很容易出现刷评论或者各种问题�
 4. ![using_valine.png](https://i.loli.net/2021/03/19/5kveuyLCBNYQbmZ.png)
 5. 保存退出
 
-需要注意的是，`comment.ejs`处于PjaxContainer中，如果开启了PJAX，请自行判断是否需要重新初始化，否则可能导致页面信息获取正确的问题，推荐的解决方法是关掉PJAX选项
+需要注意的是，`comment.ejs`处于PjaxContainer中，如果开启了PJAX，请自行判断是否需要重新初始化，否则可能导致页面信息获取不正确的问题（推荐的解决方法是关掉PJAX选项）
 
 评论系统默认只出现在文章和独立页面中，在归档和背景展示页不会出现
 
