@@ -20,7 +20,7 @@ pjax: true
 toc: true
 toc_open: false
 bubble_show: true
-footer_text: '© 2017 - 2021 | <a href="https://beian.miit.gov.cn">鄂ICP备18000723号-3</a>'
+footer_text: '© 2017 - 2021 | <a href="https://beian.miit.gov.cn">萌ICP备12345678号</a>'
 pjax_callback: ''
 avatar_url: 'images/avatar2.png'
 logo_url: 'images/gamemechine.png'
@@ -33,43 +33,6 @@ site_running_time:
 
 index_backround: https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/9ec0f8f2c7818bc76d0a25367255f160.jpg
 random_backrounds: 
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/020fe9b4220c50b6302d13fd070cd32e.jpg
   - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/04f1b46a2a9757bdad1867e6c51ae445.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/0e493e01afc5693e18bdd259c3025148.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/1115bbdd2e1ee34a63c663756c483767.png
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/128669eca4c10ad65705c126fe47b471.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/13a32fca934ab5d68498bfe5091d3ed6.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/1599568694496.jpg
   - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/15c6c0e49e6c6521fb3e4b05ac6146df.jpg
   - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/27c5e02b30f32fa03480bd8d9d599340.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/2da1a55e4b1672c9a35c1542cab62a37.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/3741f18292215f305ad278f2ce48f386.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/43651cc35614a40f4a5470e43782ebbe.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/461badca6c04995afd78b5dd7ee66709.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/4c9a5868e11de831282f25a3d06bc380.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/4f5b45a4297d897aca5a9bf030b85a1f.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/5bc5cffc0c70a799b95703e78f9b72a0.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/5f4291e2fbe251c4b9722fe70c06710d.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/60c953b314496932bc9d370591176945.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/6f3c3599acd3b5a8753e5815300bcadb.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/70226c6eed582762c43677c5ce2c08ac.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/765a9d6f42087aafaab37765982a8d09.png
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/7a0ac78214bd25a331701a3838df3946.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/7b1360039c074c761ff94e142417cd3c.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/7e53b1500b7c6dedae6b51316a6a0a82.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/8bbf74373a6742a2e0629d24f1bb3afa.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/8d7137c4967e9319c46094c8a05f3ce3.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/92c088505453cd4a19e6f877c932ab04.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/936fb425a0765375fcf01178308f5e1c.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/95116f977939dd4f69a9cf67b4fa174b.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/97a7de95537e83691e56f9be0ec75b68.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/9adc344fd2dcc109ef217ddc3defe472.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/9ec0f8f2c7818bc76d0a25367255f160.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/a5a24e4706f981f84f6b13b99178cb86.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/b922d6f4c022bf9a9e24a4e3b069a8cd.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/c15d2ff269ad1fc5b9a1b57dd701f71d.png
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/c37c106bbc503d1f5d48f9b2710f531c.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/eec52cde3abaa84a7ee848042fec3430.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/2d27d913096b687782094e091811eb7b.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/6e3f31fdee7362e533f79a88a5c9282a.jpg
-  - https://cdn.jsdelivr.net/gh/innc11/BlogBackrounds@latest/7741f1129d294e35279a0ca2637cdd78.jpg
