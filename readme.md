@@ -78,8 +78,8 @@ prism_line_numbers: true
 #   - prism-twilight
 prism_theme: 'prism-solarizedlight'
 
-# 是否启用全站 Pjax 模式提升用户访问体验。注意：启用该项可能带来页面加载问题
-pjax: true
+# 是否启用全站 Pjax 模式提升用户访问体验。注意：启用该项可能带来页面加载问题，一般推荐关闭
+pjax: false
 
 # 是否开启 TOC 文章目录功能
 toc: true
@@ -317,10 +317,31 @@ relative_asset_link_layouts:
 
 ![bblink.png](https://i.loli.net/2020/04/07/13ZtBldaNuxqrch.png)
 
+## 评论系统
+
+主题默认不附带评论系统，之前的用的是我自己的评论系统，因为后端需要PHP环境且配置麻烦，就没有一起集成到主题里
+
+Valine因为各种机制不完善，很容易出现刷评论或者各种问题，所以也没有集成进来
+
+如果需要插入自己的评论系统，可以按照以下方法：
+
+---
+
+以Valine为例：
+
+1. 在`layout/includes/foot.ejs`或者`layout/includes/head.ejs`中引入评论的脚本和样式
+2. ![import_valine.png](https://i.loli.net/2021/03/19/f7sSWNUAbrpQXEH.png)
+3. 在`layout/includes/widget/comment.ejs`中，插入对应的JS代码
+4. ![using_valine.png](https://i.loli.net/2021/03/19/5kveuyLCBNYQbmZ.png)
+5. 保存退出
+
+需要注意的是，`comment.ejs`处于PjaxContainer中，如果开启了PJAX，请自行判断是否需要重新初始化，否则可能导致页面信息获取正确的问题，推荐的解决方法是关掉PJAX选项
+
+评论系统默认只出现在文章和独立页面中，在归档和背景展示页不会出现
+
 # 已知问题
 
 1. PJAX覆盖不完全，目前PJAX仅覆盖了文章内容页面，对其它页面暂时无效（已经在修了）
-2. 暂时没有评论系统，因为之前是用的自己的评论系统，而且安装也比较麻烦，就没有一起集成到主题里
 
 # License
 
