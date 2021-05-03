@@ -62,10 +62,10 @@
 
 /* 翻页按钮 */
 .page-nav a {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
     width: 42px !important;
     height: 42px !important;
-    border-radius: 35%!important;
+    border-radius: 50%!important;
     transition: all 0.2s;
 }
 .page-nav .active{
