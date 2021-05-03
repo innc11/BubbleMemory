@@ -1,5 +1,5 @@
 <%# 参数表
-	bgimg?: string // 使用指定的背景URL
+	bg?: string // 使用指定的背景URL
 %> 
 
 <div class="section-shaped">
@@ -53,6 +53,6 @@
         }
 
         <%# 对相对路径的处理逻辑写在asset_link.js中了 %>
-        RandomBG('<%- (typeof bgimg!='undefined' && bgimg != '')?bgimg:'' %>');
+        RandomBG('<%- (typeof bg!='undefined' && bg != '')?bg:'' %>');
     })
 </script>

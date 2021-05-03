@@ -1,7 +1,10 @@
 <%- partial('includes/head') %>
 
 <main>
-    <%- partial('includes/widget/background', {bgimg: theme.index_backround}) %>
+    <%- partial('includes/widget/background', {bg: theme.index_backround}) %>
+
+    <%# 阅读次数+1 %> 
+	<div class="april-comment-visit" pathname="/"></div>
 
     <div class="container shape-container d-flex align-items-center py-lg section-hero">
         <div class="col px-0">
@@ -33,7 +36,7 @@
             <!-- Article Previews -->
             <% page.posts.each(function(post, index) { %>
                 <% if (! (/^_.*/.test(post.source.split('/')[1]))) { %>
-                    <%- partial('includes/article_summary', {is_first: index==0, article: post, bgimg: post.bg}) %>
+                    <%- partial('includes/article_summary', {is_first: index==0, article: post, bg: post.bg}) %>
                 <% } %>
             <% }) %>
             

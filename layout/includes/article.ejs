@@ -7,7 +7,10 @@
 
 <main>
 	<%- partial('includes/catalog') %>
-	<%- partial('includes/widget/background', {bgimg: article.bg}) %>
+	<%- partial('includes/widget/background', {bg: article.bg}) %>
+	
+	<div class="april-comment-visit" pathname="<%- '/'+article.path %>" style="display: none;"></div>
+
 	<section class="section section-lg section-hero section-shaped">
 		<div class="container shape-container d-flex align-items-center py-lg">
 			<div class="col px-0 text-center">

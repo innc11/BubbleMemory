@@ -1,20 +1,20 @@
 <%# 参数表
     is_first: bool // 是否为第一篇文章
     article: object // 文章对象(其实就是post对象)
-    bgimg?: string // 背景图
+    bg?: string // 背景图
 %> 
 
 
 <% let moreClass = '' %>
 <% if (is_first) { moreClass += 'content-card-head' } %>
 
-<% if(bgimg!=null) { %>
+<% if(bg!=null) { %>
     <!-- Summary Backgournd -->
     <% moreClass += ' article-preview-bg' %>
     <% moreClass += ' article-preview-bg-' + article.date %>
     <style type="text/css">
         .article-preview-bg-<%- article.date %>:before {
-            background-image: url(<%- bgimg %>);
+            background-image: url(<%- bg %>);
         }
     </style>
 <% } %>
@@ -26,7 +26,8 @@
                 <h2><%= article.title %></h2>
                 <div class="list-object">
                     <span class="list-tag"><i class="fa fa-calendar-o" aria-hidden="true"></i> <time datetime="<%- article.date.format() %>"><%- date(article.date, 'YYYY年MM月DD日') %></time></span>
-                    <!-- <span class="list-tag"><i class="fa fa-comments-o" aria-hidden="true"></i> Todo 条评论</span> -->
+                    <!-- <span class="list-tag"><i class="fa fa-comments-o" aria-hidden="true"></i> <span class="april-comment-count" pathname="<%- '/'+article.path %>">xx</span> 条评论</span> -->
+                    <span class="list-tag"><i class="fa fa-eye" aria-hidden="true"></i> <span class="april-comment-views" pathname="<%- '/'+article.path %>">xx</span> 次阅读</span>
                     <%- partial('includes/widget/categories', {showicon: true}) %>
                     <%- partial('includes/widget/tags', {showicon: true}) %>
                     <!-- <span class="list-tag"><i class="fa fa-user-o" aria-hidden="true"></i> <a class="badge badge-warning badge-pill" href="<%- article.permalink %>"><%- config.author %></a></span> -->
