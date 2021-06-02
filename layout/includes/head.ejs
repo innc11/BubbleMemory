@@ -29,16 +29,7 @@
 
 	<!-- Main CSS -->
 	<link type="text/css" href="<%- url_for('css/main.min.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-comment.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-common.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-font.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-footer.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-friend.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-headers.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-index.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-search-bar.css') %>" rel="stylesheet">
-	<link type="text/css" href="<%- url_for('more/custom-summary.css') %>" rel="stylesheet">
-	<!-- <link type="text/css" href="<%- url_for('more/dark.css') %>" rel="stylesheet"> -->
+	<link type="text/css" href="<%- url_for('css/bubble-memory.css') %>" rel="stylesheet">
 
 	<!-- KaTeX CSS -->
 	<% if (theme.katex) { %>
@@ -47,10 +38,12 @@
 
 	<!-- PrismJS CSS -->
 	<% if (theme.prismjs) { %>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/<%- theme.prism_theme %>.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.css" />
+		<% if (theme.prism_theme) { %>
+        	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/<%- theme.prism_theme %>.css" />
+		<% } %>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.css" />
         <% if (theme.prism_line_numbers) { %>
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.css" />
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css" />
         <% } %>
     <% } %>
 

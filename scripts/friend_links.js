@@ -22,7 +22,7 @@ hexo.extend.filter.register('after_render:html', function(str, data) {
             })
 
             if(output != '')
-                $(this).replaceWith('<bblist>'+output+'</bblist>')
+                $(this).replaceWith('<bblist class="friend-links">'+output+'</bblist>')
         })
 
         return $.html()
